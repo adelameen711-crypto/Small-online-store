@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE | سلة المشتريات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LUXE.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="تغيير المظهر"><i class="ph ph-moon"></i></button>
+                <a href="login.html" class="icon-link"><i class="ph ph-user"></i></a>
+                <a href="cart.html" class="cart-icon-wrapper active">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span id="cart-badge" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="cart-page" style="margin-top: 100px; padding: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; min-height: 50vh;">
+        <h1 style="margin-bottom: 2rem; font-size: 2.5rem; color: var(--primary-color);">سلة المشتريات</h1>
+        
+        <div id="empty-cart-msg" style="display: none; text-align: center; padding: 5rem 0;">
+            <i class="ph ph-shopping-cart" style="font-size: 5rem; color: var(--border-color); margin-bottom: 1rem;"></i>
+            <h2 style="color: var(--primary-color);">سلتك فارغة حالياً</h2>
+            <a href="products.html" class="btn btn-primary" style="margin-top: 2rem;">تصفح المنتجات</a>
+        </div>
+
+        <div class="cart-content" id="cart-content" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+            <div class="cart-items" id="cart-items-container" style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 1.5rem;">
+                <!-- Cart items will be rendered here -->
+            </div>
+            
+            <div class="cart-summary" style="flex: 1; min-width: 300px; background: var(--surface-color); padding: 2rem; border-radius: 15px; border: 1px solid var(--border-color); height: fit-content; position: sticky; top: 100px;">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; color: var(--primary-color);">ملخص الطلب</h3>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--text-muted);">
+                    <span>المجموع الفرعي:</span>
+                    <span id="subtotal">0 ر.س</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; color: var(--text-muted);">
+                    <span>الضريبة (15%):</span>
+                    <span id="tax">0 ر.س</span>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 2rem; font-size: 1.5rem; font-weight: 800; border-top: 1px solid var(--border-color); padding-top: 1rem; color: var(--primary-color);">
+                    <span>الإجمالي:</span>
+                    <span id="total" style="color: var(--secondary-color);">0 ر.س</span>
+                </div>
+                
+                <button class="btn btn-primary" style="width: 100%;">إتمام الطلب</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>LUXE.</h3>
+                <p>وجهتك الأولى للأزياء الفاخرة.</p>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LUXE. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <div id="alerts-container" class="alerts-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>

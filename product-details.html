@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE | تفاصيل المنتج</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .product-details-container { max-width: 1200px; margin: 120px auto 5rem; padding: 0 2rem; display: flex; gap: 4rem; flex-wrap: wrap; }
+        .product-details-image { flex: 1; min-width: 300px; border-radius: 20px; overflow: hidden; box-shadow: var(--box-shadow); height: fit-content; }
+        .product-details-image img { width: 100%; height: auto; display: block; object-fit: cover; }
+        .product-details-info { flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center; }
+        .details-category { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 0.5rem; display: block;}
+        .details-title { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 800; }
+        .details-price { font-size: 2rem; font-weight: 800; color: var(--secondary-color); margin-bottom: 2rem; }
+        .details-description { font-size: 1.1rem; color: var(--text-color); line-height: 1.8; margin-bottom: 2rem; }
+        .details-specs { margin-bottom: 3rem; background: var(--surface-color); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); }
+        .details-specs h3 { margin-bottom: 1.5rem; color: var(--primary-color); font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;}
+        .details-specs ul { list-style: none; padding: 0;}
+        .details-specs ul li { margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 1.1rem;}
+        .details-specs ul li::before { content: '•'; color: var(--secondary-color); font-size: 1.5rem; }
+        .actions-group { display: flex; gap: 1rem; margin-top: auto; }
+        
+        #error-message { text-align: center; margin: 150px auto; display: none; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LUXE.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html" class="active">المنتجات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle"><i class="ph ph-moon"></i></button>
+                <a href="login.html" class="icon-link"><i class="ph ph-user"></i></a>
+                <a href="cart.html" class="cart-icon-wrapper">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span id="cart-badge" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="error-message">
+        <h2 style="color: var(--error-color); margin-bottom: 1rem;">المنتج غير موجود أو تم حذفه!</h2>
+        <a href="products.html" class="btn btn-primary">العودة للمنتجات</a>
+    </div>
+
+    <section class="product-details-container reveal" id="product-details-container" style="display: none;">
+        <div class="product-details-image">
+            <img id="pd-image" src="" alt="">
+        </div>
+        <div class="product-details-info">
+            <span class="details-category" id="pd-category"></span>
+            <h1 class="details-title" id="pd-title"></h1>
+            <div class="details-price" id="pd-price"></div>
+            <p class="details-description" id="pd-description"></p>
+            <div class="details-specs">
+                <h3>أبرز المواصفات</h3>
+                <ul id="pd-specs">
+                    <!-- Specs will be injected here -->
+                </ul>
+            </div>
+            <div class="actions-group">
+                <button id="pd-add-btn" class="btn btn-primary" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.3rem;">
+                    إضافة للسلة <i class="ph ph-shopping-cart-simple" style="font-size: 1.8rem;"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>LUXE.</h3>
+                <p>وجهتك الأولى للأزياء الفاخرة.</p>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LUXE. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <div id="alerts-container" class="alerts-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>

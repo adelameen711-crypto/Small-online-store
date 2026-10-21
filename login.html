@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE | تسجيل الدخول</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .form-group { margin-bottom: 1.5rem; position: relative; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+        .form-control { width: 100%; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px; background: var(--background-color); color: var(--text-color); font-family: var(--font-family); transition: var(--transition); }
+        .form-control:focus { border-color: var(--secondary-color); outline: none; box-shadow: 0 0 0 3px rgba(201, 160, 80, 0.2); }
+        .password-toggle { position: absolute; left: 15px; top: 40px; cursor: pointer; color: var(--text-muted); font-size: 1.2rem; }
+        .error-msg { color: var(--error-color); font-size: 0.85rem; margin-top: 5px; display: none; }
+        .form-control.error { border-color: var(--error-color); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LUXE.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle"><i class="ph ph-moon"></i></button>
+                <a href="login.html" class="icon-link active"><i class="ph ph-user"></i></a>
+                <a href="cart.html" class="cart-icon-wrapper">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span id="cart-badge" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section style="margin-top: 80px; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+        <div style="background: var(--surface-color); padding: 3rem; border-radius: 20px; box-shadow: var(--box-shadow); width: 100%; max-width: 500px; border: 1px solid var(--border-color);" class="reveal">
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; color: var(--primary-color);">تسجيل الدخول</h2>
+            
+            <form id="login-form" novalidate>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" class="form-control" placeholder="example@email.com">
+                    <span class="error-msg" id="email-error">الرجاء إدخال بريد إلكتروني صحيح يحوي @</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">كلمة المرور</label>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••">
+                    <i class="ph ph-eye password-toggle" id="toggle-password"></i>
+                    <span class="error-msg" id="password-error">كلمة المرور يجب أن لا تقل عن 6 أحرف</span>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">دخول</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="alerts-container" class="alerts-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>

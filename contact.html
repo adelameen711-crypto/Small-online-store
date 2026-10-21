@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE | اتصل بنا</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+        .form-control { width: 100%; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px; background: var(--background-color); color: var(--text-color); font-family: var(--font-family); transition: var(--transition); }
+        .form-control:focus { border-color: var(--secondary-color); outline: none; box-shadow: 0 0 0 3px rgba(201, 160, 80, 0.2); }
+        .error-msg { color: var(--error-color); font-size: 0.85rem; margin-top: 5px; display: none; }
+        .form-control.error { border-color: var(--error-color); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LUXE.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="contact.html" class="active">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle"><i class="ph ph-moon"></i></button>
+                <a href="login.html" class="icon-link"><i class="ph ph-user"></i></a>
+                <a href="cart.html" class="cart-icon-wrapper">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span id="cart-badge" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section style="margin-top: 80px; padding: 4rem 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <div style="background: var(--surface-color); padding: 3rem; border-radius: 20px; box-shadow: var(--box-shadow); border: 1px solid var(--border-color);" class="reveal">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-color);">تواصل معنا</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">نحن هنا لخدمتك والإجابة على جميع استفساراتك.</p>
+            
+            <form id="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" id="name" class="form-control" placeholder="محمد أحمد">
+                    <span class="error-msg" id="name-error">الرجاء إدخال اسمك</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-email">البريد الإلكتروني</label>
+                    <input type="email" id="contact-email" class="form-control" placeholder="example@email.com">
+                    <span class="error-msg" id="contact-email-error">الرجاء إدخال بريد إلكتروني صحيح يحوي @</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">الرسالة</label>
+                    <textarea id="message" class="form-control" rows="5" placeholder="اكتب رسالتك هنا..."></textarea>
+                    <span class="error-msg" id="message-error">الرجاء إدخال رسالتك (على الأقل 10 أحرف)</span>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">إرسال الرسالة</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer" style="margin-top: 0;">
+        <div class="footer-bottom" style="border:none;">
+            <p>&copy; 2026 LUXE. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <div id="alerts-container" class="alerts-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>

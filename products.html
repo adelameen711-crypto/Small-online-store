@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE | المنتجات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LUXE.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html" class="active">المنتجات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="تغيير المظهر"><i class="ph ph-moon"></i></button>
+                <a href="login.html" class="icon-link" aria-label="تسجيل الدخول"><i class="ph ph-user"></i></a>
+                <a href="cart.html" class="cart-icon-wrapper" aria-label="السلة">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span id="cart-badge" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header reveal" style="margin-top: 80px; padding: 4rem 2rem; text-align: center; background: var(--surface-color);">
+        <h1 style="font-size: 3rem; color: var(--primary-color);">مجموعتنا الحصرية</h1>
+        <p style="color: var(--text-muted); font-size: 1.2rem;">تصفح أحدث المنتجات واكتشف ما يناسب ذوقك الرفيع</p>
+    </section>
+
+    <!-- Filter & Search Section -->
+    <section class="filter-section reveal">
+        <div class="filter-container" style="max-width: 1200px; margin: 0 auto; padding: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between;">
+            <div class="search-box" style="flex: 1; min-width: 300px; position: relative;">
+                <i class="ph ph-magnifying-glass" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.2rem;"></i>
+                <input type="text" id="search-input" placeholder="ابحث عن منتج..." style="width: 100%; padding: 1rem 3rem 1rem 1rem; border: 1px solid var(--border-color); border-radius: 50px; background: var(--surface-color); color: var(--text-color); font-family: var(--font-family); font-size: 1rem;">
+            </div>
+            <div class="category-filter" style="display: flex; gap: 1rem; align-items: center;">
+                <label for="category-select" style="font-weight: 500;">التصنيف:</label>
+                <select id="category-select" style="padding: 0.8rem 1.5rem; border: 1px solid var(--border-color); border-radius: 50px; background: var(--surface-color); color: var(--text-color); font-family: var(--font-family); cursor: pointer;">
+                    <option value="الكل">الكل</option>
+                    <option value="إكسسوارات">إكسسوارات</option>
+                    <option value="حقائب">حقائب</option>
+                    <option value="أحذية">أحذية</option>
+                    <option value="عطور">عطور</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="all-products">
+        <div class="products-grid" id="all-products-container" style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
+            <!-- Products will be injected here via JS -->
+        </div>
+        <div id="no-results" style="display: none; text-align: center; padding: 3rem; color: var(--text-muted); font-size: 1.2rem;">
+            لا توجد منتجات مطابقة لبحثك.
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>LUXE.</h3>
+                <p>وجهتك الأولى للأزياء الفاخرة والتسوق الراقي. نقدم لك أفضل المنتجات بأعلى جودة.</p>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                    <li><a href="cart.html">السلة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>تواصل معنا</h4>
+                <div class="social-links">
+                    <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#"><i class="ph ph-facebook-logo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LUXE. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="back-to-top" class="back-to-top" aria-label="العودة للأعلى"><i class="ph ph-arrow-up"></i></button>
+
+    <!-- Alerts Container -->
+    <div id="alerts-container" class="alerts-container"></div>
+    
+    <!-- Modal (Quick View) -->
+    <div id="quick-view-modal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(5px);">
+        <div class="modal-content" style="background: var(--surface-color); border-radius: 15px; max-width: 800px; width: 90%; position: relative; display: flex; flex-wrap: wrap; overflow: hidden; animation: modalIn 0.3s ease;">
+            <button class="close-modal" style="position: absolute; top: 15px; right: 15px; font-size: 1.5rem; color: var(--primary-color); z-index: 10;"><i class="ph ph-x"></i></button>
+            <div class="modal-image" style="flex: 1; min-width: 300px; height: 400px;">
+                <img id="modal-img" src="" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="modal-details" style="flex: 1; min-width: 300px; padding: 3rem 2rem; display: flex; flex-direction: column; justify-content: center;">
+                <span id="modal-category" style="color: var(--text-muted); margin-bottom: 0.5rem;"></span>
+                <h2 id="modal-title" style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-color);"></h2>
+                <div id="modal-price" style="font-size: 1.8rem; font-weight: 800; color: var(--secondary-color); margin-bottom: 2rem;"></div>
+                <button id="modal-add-btn" class="btn btn-primary" style="align-self: flex-start; width: 100%;">إضافة للسلة <i class="ph ph-shopping-cart-simple"></i></button>
+            </div>
+        </div>
+    </div>
+    <style>
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>

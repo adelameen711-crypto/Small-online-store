@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE | متجر الكتروني فخم</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Icons (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LUXE.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="تغيير المظهر">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <a href="login.html" class="icon-link" aria-label="تسجيل الدخول">
+                    <i class="ph ph-user"></i>
+                </a>
+                <a href="cart.html" class="cart-icon-wrapper" aria-label="السلة">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span id="cart-badge" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <header class="hero-slider">
+        <div class="slides-container">
+            <!-- Slide 1 -->
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop');">
+                <div class="slide-content fade-up">
+                    <h1>اكتشف الأناقة العصرية</h1>
+                    <p>أحدث التشكيلات الحصرية بانتظارك بتصاميم تخطف الأنظار</p>
+                    <a href="products.html" class="btn btn-primary">تسوق الآن</a>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop');">
+                <div class="slide-content">
+                    <h1>جودة لا تضاهى</h1>
+                    <p>تفاصيل دقيقة تعكس ذوقك الرفيع في كل مناسبة</p>
+                    <a href="products.html" class="btn btn-primary">تصفح المجموعة</a>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev-btn"><i class="ph ph-caret-right"></i></button>
+        <button class="slider-btn next-btn"><i class="ph ph-caret-left"></i></button>
+        <div class="slider-dots"></div>
+    </header>
+
+    <!-- Promo Countdown Section -->
+    <section class="promo-section reveal">
+        <div class="promo-container">
+            <div class="promo-text">
+                <h2>عرض حصري ومحدود!</h2>
+                <p>احصل على خصم 50% على التشكيلة الجديدة. العرض ينتهي قريباً.</p>
+            </div>
+            <div class="countdown" id="countdown">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <span class="label">أيام</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <span class="label">ساعات</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <span class="label">دقائق</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <span class="label">ثواني</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products reveal">
+        <div class="section-header">
+            <h2>منتجات مميزة</h2>
+            <p>أفضل المبيعات لدينا هذا الأسبوع</p>
+        </div>
+        <div class="products-grid" id="featured-products-container">
+            <!-- المنتجات ستُضاف هنا برمجياً بواسطة JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>LUXE.</h3>
+                <p>وجهتك الأولى للأزياء الفاخرة والتسوق الراقي. نقدم لك أفضل المنتجات بأعلى جودة.</p>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                    <li><a href="cart.html">السلة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>تواصل معنا</h4>
+                <div class="social-links">
+                    <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#"><i class="ph ph-facebook-logo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LUXE. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="العودة للأعلى">
+        <i class="ph ph-arrow-up"></i>
+    </button>
+
+    <!-- Custom Alerts Container -->
+    <div id="alerts-container" class="alerts-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
